@@ -34,9 +34,5 @@ jobs:
       - name: List _site contents
         run: ls -la ./_site
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
+      - name: Build Jekyll for GitHub Pages
+        uses: actions/jekyll-build-pages@v1.0.13
